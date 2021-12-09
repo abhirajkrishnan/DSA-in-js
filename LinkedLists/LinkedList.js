@@ -141,7 +141,7 @@ class Linkedlist{
 
     
 
-var list= new Linkedlist();
+export var list= new Linkedlist();
 
 list.push("1");
 list.push("2");
@@ -165,4 +165,4 @@ node2.next=node3;
 node3.next=node4;
 node4.next=node5;
 node5.next=node6;
-
+console.log(list)
