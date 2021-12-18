@@ -32,14 +32,14 @@ var maxSlidingWindow = function(nums, k) {
     let deque=[];
     let maxarr=[];
 for(let i=0;i< nums.length;i++){
-    if(deque.length > 0 && deque[0] ==i - k) deque.shift();
+    if(deque.length > 0 && deque[0] ==i - k) deque.shift();  //to remove out of bond indexes
     
-    while(deque.length > 0 && nums[deque[deque.length-1]] <= nums[i]){
+    while(deque.length > 0 && nums[deque[deque.length-1]] <= nums[i]){      //to remove all the smaller element indexes
         deque.pop();
     }
     
     deque.push(i)
-    if(i >= k-1) maxarr.push(nums[deque[0]])
+    if(i >= k-1) maxarr.push(nums[deque[0]])    //to start pushing max when window starts
 }
 return maxarr;
 };
